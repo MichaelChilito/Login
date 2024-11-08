@@ -4,7 +4,10 @@ const path = require('path');
 const app = express();
 const port = 3000;
 
-// Configurar para que express maneje datos de formularios
+// Configuración para servir archivos estáticos
+app.use(express.static(path.join(__dirname)));
+
+// Configuración para manejar datos de formulario
 app.use(express.urlencoded({ extended: true }));
 
 // Ruta principal
